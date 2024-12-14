@@ -1,6 +1,5 @@
 const std = @import("std");
 const rl = @import("raylib");
-const rm = @import("raylib-math");
 const V2 = rl.Vector2;
 
 const SCREEN_WIDTH: f32 = 1280;
@@ -180,7 +179,7 @@ const Ball = struct {
         if (!self.active) {
             return true;
         }
-        self.pos = rm.vector2Add(self.pos, self.velocity);
+        self.pos = rl.math.vector2Add(self.pos, self.velocity);
         if (self.pos.x < 0) {
             self.pos.x = 0;
             self.velocity.x = -self.velocity.x;
